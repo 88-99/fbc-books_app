@@ -31,3 +31,17 @@
 
 en:
   hello: "Hello world"
+  links:
+      Show: Show
+      Edit: Edit
+      Destroy: Destroy
+      New_Book: New Book
+      Back: Back
+  labels:
+      Title: Title
+      Memo: Memo
+      Author: Author
+      Picture: Picture
+  h1:
+    New_Book: New Book
+    Editing_Book: Editing Book
