@@ -120,12 +120,6 @@ ja:
       create: 登録する
       submit: 保存する
       update: 更新する
-    links:
-      Show: 詳細
-      Edit: 編集
-      Destroy: 削除
-      New_Book: 新規作成
-      Back: 戻る
   number:
     currency:
       format:
@@ -187,6 +181,12 @@ ja:
       long: "%Y/%m/%d %H:%M"
       short: "%m/%d %H:%M"
     pm: 午後
+  links:
+      Show: 詳細
+      Edit: 編集
+      Destroy: 削除
+      New_Book: 新規作成
+      Back: 戻る
   labels:
       Title: タイトル
       Memo: メモ

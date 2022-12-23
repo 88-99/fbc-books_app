@@ -20,5 +20,5 @@
   <%= image_tag(@book.picture_url) if @book.picture.present? %>
 </p>
 
-<%= link_to I18n.t('helpers.links.Edit'), edit_book_path(@book) %> |
-<%= link_to I18n.t('helpers.links.Back'), books_path %>
+<%= link_to I18n.t('links.Edit'), edit_book_path(@book) %> |
+<%= link_to I18n.t('links.Back'), books_path %>
