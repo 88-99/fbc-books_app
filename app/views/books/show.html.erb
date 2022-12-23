@@ -1,24 +1,24 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
+  <strong><%= I18n.t('labels.Title') %>:</strong>
   <%= @book.title %>
 </p>
 
 <p>
-  <strong>Memo:</strong>
+  <strong><%= I18n.t('labels.Memo') %>:</strong>
   <%= @book.memo %>
 </p>
 
 <p>
-  <strong>Author:</strong>
+  <strong><%= I18n.t('labels.Author') %>:</strong>
   <%= @book.author %>
 </p>
 
 <p>
-  <strong>Picture:</strong>
+  <strong><%= I18n.t('labels.Picture') %>:</strong>
   <%= image_tag(@book.picture_url) if @book.picture.present? %>
 </p>
 
-<%= link_to 'Edit', edit_book_path(@book) %> |
-<%= link_to 'Back', books_path %>
+<%= link_to I18n.t('helpers.links.Edit'), edit_book_path(@book) %> |
+<%= link_to I18n.t('helpers.links.Back'), books_path %>

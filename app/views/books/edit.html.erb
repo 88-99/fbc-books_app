@@ -1,6 +1,6 @@
-<h1>Editing Book</h1>
+<h1><%= I18n.t('h1.Editing_Book') %></h1>
 
 <%= render 'form', book: @book %>
 
-<%= link_to 'Show', @book %> |
-<%= link_to 'Back', books_path %>
+<%= link_to I18n.t('helpers.links.Show'), @book %> |
+<%= link_to I18n.t('helpers.links.Back'), books_path %>
