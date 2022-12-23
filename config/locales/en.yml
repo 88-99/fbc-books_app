@@ -45,3 +45,7 @@ en:
   h1:
     New_Book: New Book
     Editing_Book: Editing Book
+  notifications:
+    Book_was_successfully_created: Book was successfully created.
+    Book_was_successfully_updated: Book was successfully updated.
+    Book_was_successfully_destroyed: Book was successfully destroyed.
