@@ -62,3 +62,4 @@ gem 'net-smtp'
 
 gem 'carrierwave'
 gem 'kaminari'
+gem 'devise'
