@@ -187,11 +187,6 @@ ja:
       Destroy: 削除
       New_Book: 新規作成
       Back: 戻る
-  labels:
-      Title: タイトル
-      Memo: メモ
-      Author: 著者
-      Picture: 写真
   h1:
     New_Book: 新しい本
     Editing_Book: 本の編集
