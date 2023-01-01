@@ -41,6 +41,7 @@ en:
     New_Book: New Book
     Editing_Book: Editing Book
   notifications:
-    Book_was_successfully_created: Book was successfully created.
-    Book_was_successfully_updated: Book was successfully updated.
-    Book_was_successfully_destroyed: Book was successfully destroyed.
+    successfully_created: "%{model_name} was successfully created."
+    successfully_updated: "%{model_name} was successfully updated."
+    successfully_destroyed: "%{model_name} was successfully destroyed."
+    confirm: Are you sure?

@@ -191,6 +191,7 @@ ja:
     New_Book: 新しい本
     Editing_Book: 本の編集
   notifications:
-    Book_was_successfully_created: 本の登録に成功しました。
-    Book_was_successfully_updated: 本の更新に成功しました。
-    Book_was_successfully_destroyed: 本の削除に成功しました。
+    successfully_created: "%{model_name}の登録に成功しました。"
+    successfully_updated: "%{model_name}の更新に成功しました。"
+    successfully_destroyed: "%{model_name}の削除に成功しました。"
+    confirm: 削除してもよろしいですか？
