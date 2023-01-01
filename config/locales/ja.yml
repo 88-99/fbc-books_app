@@ -181,12 +181,12 @@ ja:
       long: "%Y/%m/%d %H:%M"
       short: "%m/%d %H:%M"
     pm: 午後
-  links:
-      Show: 詳細
-      Edit: 編集
-      Destroy: 削除
-      New_Book: 新規作成
-      Back: 戻る
+  button:
+      show: 詳細
+      edit: 編集
+      destroy: 削除
+      new: 新規作成
+      back: 戻る
   h1:
     New_Book: 新しい本
     Editing_Book: 本の編集
