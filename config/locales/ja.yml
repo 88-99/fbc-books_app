@@ -187,11 +187,17 @@ ja:
       destroy: 削除
       new: 新規作成
       back: 戻る
-  h1:
-    New_Book: 新しい本
-    Editing_Book: 本の編集
-  notifications:
-    successfully_created: "%{model_name}の登録に成功しました。"
-    successfully_updated: "%{model_name}の更新に成功しました。"
-    successfully_destroyed: "%{model_name}の削除に成功しました。"
-    confirm: 削除してもよろしいですか？
+  books:
+    create:
+      success: "%{model_name}の登録に成功しました。"
+    update:
+      success: "%{model_name}の更新に成功しました。"
+    destroy:
+      success: "%{model_name}の削除に成功しました。"
+    index:
+      books: "%{model_name}"
+      confirm: 削除してもよろしいですか？
+    edit:
+      editing_book: "%{model_name}の編集"
+    new:
+      new_book: "新しい%{model_name}"

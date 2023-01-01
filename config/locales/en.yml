@@ -37,11 +37,17 @@ en:
       destroy: Destroy
       new: New Book
       back: Back
-  h1:
-    New_Book: New Book
-    Editing_Book: Editing Book
-  notifications:
-    successfully_created: "%{model_name} was successfully created."
-    successfully_updated: "%{model_name} was successfully updated."
-    successfully_destroyed: "%{model_name} was successfully destroyed."
-    confirm: Are you sure?
+  books:
+    create:
+      success: "%{model_name} was successfully created."
+    update:
+      success: "%{model_name} was successfully updated."
+    destroy:
+      success: "%{model_name} was successfully destroyed."
+    index:
+      books: "%{model_name}s"
+      confirm: Are you sure?
+    edit:
+      editing_book: "Editing %{model_name}"
+    new:
+      new_book: "New %{model_name}"

@@ -1,4 +1,4 @@
-<h1><%= I18n.t('h1.Editing_Book') %></h1>
+<h1><%= t('.editing_book', model_name: Book.model_name.human) %></h1>
 
 <%= render 'form', book: @book %>
 
