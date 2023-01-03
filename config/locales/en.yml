@@ -31,23 +31,23 @@
 
 en:
   hello: "Hello world"
-  button:
+  links:
       show: Show
       edit: Edit
       destroy: Destroy
       new: New Book
       back: Back
   books:
+    index:
+      books: "%{model_name}s"
+      confirm: Are you sure?
+    edit:
+      editing: "Editing %{model_name}"
+    new:
+      new: "New %{model_name}"
     create:
       success: "%{model_name} was successfully created."
     update:
       success: "%{model_name} was successfully updated."
     destroy:
       success: "%{model_name} was successfully destroyed."
-    index:
-      books: "%{model_name}s"
-      confirm: Are you sure?
-    edit:
-      editing_book: "Editing %{model_name}"
-    new:
-      new_book: "New %{model_name}"
