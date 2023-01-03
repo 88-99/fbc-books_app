@@ -182,11 +182,15 @@ ja:
       short: "%m/%d %H:%M"
     pm: 午後
   links:
-      show: 詳細
-      edit: 編集
-      destroy: 削除
-      new: 新規作成
-      back: 戻る
+    show: 詳細
+    edit: 編集
+    destroy: 削除
+    new: 新規作成
+    back: 戻る
+  success:
+    create: "%{model_name}の登録に成功しました。"
+    update: "%{model_name}の更新に成功しました。"
+    destroy: "%{model_name}の削除に成功しました。"
   books:
     index:
       books: "%{model_name}"
@@ -195,9 +199,3 @@ ja:
       editing: "%{model_name}の編集"
     new:
       new: "新しい%{model_name}"
-    create:
-      success: "%{model_name}の登録に成功しました。"
-    update:
-      success: "%{model_name}の更新に成功しました。"
-    destroy:
-      success: "%{model_name}の削除に成功しました。"

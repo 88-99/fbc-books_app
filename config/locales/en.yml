@@ -32,11 +32,15 @@
 en:
   hello: "Hello world"
   links:
-      show: Show
-      edit: Edit
-      destroy: Destroy
-      new: New Book
-      back: Back
+    show: Show
+    edit: Edit
+    destroy: Destroy
+    new: New Book
+    back: Back
+  success:
+    create: "%{model_name} was successfully created."
+    update: "%{model_name} was successfully updated."
+    destroy: "%{model_name} was successfully destroyed."
   books:
     index:
       books: "%{model_name}s"
@@ -45,9 +49,3 @@ en:
       editing: "Editing %{model_name}"
     new:
       new: "New %{model_name}"
-    create:
-      success: "%{model_name} was successfully created."
-    update:
-      success: "%{model_name} was successfully updated."
-    destroy:
-      success: "%{model_name} was successfully destroyed."
