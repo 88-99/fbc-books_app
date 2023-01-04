@@ -41,6 +41,7 @@ group :development do
   gem 'rubocop-rails', require: false
   gem 'spring'
   gem 'web-console', '>= 4.1.0'
+  gem 'i18n_generators'
 end
 
 group :test do
