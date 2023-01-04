@@ -191,10 +191,10 @@ ja:
     create: "%{model_name}の登録に成功しました。"
     update: "%{model_name}の更新に成功しました。"
     destroy: "%{model_name}の削除に成功しました。"
+  confirm: 本当によろしいですか？
   books:
     index:
       books: "%{model_name}"
-      confirm: 削除してもよろしいですか？
     edit:
       editing: "%{model_name}の編集"
     new:

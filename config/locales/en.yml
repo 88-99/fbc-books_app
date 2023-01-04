@@ -41,10 +41,10 @@ en:
     create: "%{model_name} was successfully created."
     update: "%{model_name} was successfully updated."
     destroy: "%{model_name} was successfully destroyed."
+  confirm: Are you sure?
   books:
     index:
       books: "%{model_name}s"
-      confirm: Are you sure?
     edit:
       editing: "Editing %{model_name}"
     new:
