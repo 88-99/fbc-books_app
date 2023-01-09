@@ -7,4 +7,6 @@ class User < ApplicationRecord
   validates :posal_code, length: { maximum: 7 }
   validates :address, length: { maximum: 40 }
   validates :profile, length: { maximum: 200 }
+
+  paginates_per 5
 end
