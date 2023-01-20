@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2023_01_18_215317) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "posal_code"
+    t.integer "postal_code"
     t.string "address"
     t.string "profile"
     t.index ["email"], name: "index_users_on_email", unique: true
