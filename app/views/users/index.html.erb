@@ -5,6 +5,7 @@
     <tr>
       <th><%= User.human_attribute_name(:email) %></th>
       <th><%= User.human_attribute_name(:name) %></th>
+      <th><%= User.human_attribute_name(:avatar) %></th>
       <th><%= User.human_attribute_name(:postal_code) %></th>
       <th><%= User.human_attribute_name(:address) %></th>
       <th></th>
@@ -16,6 +17,11 @@
       <tr>
         <td><%= user.email %></td>
         <td><%= user.name %></td>
+        <% if user.avatar.present? %>
+          <td><%= image_tag user.avatar.variant(resize:'1024x1024').processed, class: "image_index" %></td>
+        <% else %>
+          <td>&nbsp;</td>
+        <% end %>
         <td><%= user.postal_code %></td>
         <td><%= user.address %></td>
         <td><%= link_to t('views.common.show'), user %></td>
