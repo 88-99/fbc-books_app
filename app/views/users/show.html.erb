@@ -35,6 +35,14 @@
 
 <%= render 'devise/shared/stats' %>
 
+<% unless current_user == @user %>
+  <% if current_user.following?(@user) %>
+    <%= link_to "フォロー外す", follow_path(@user.id), method: :delete %>
+  <% else %>
+    <%= link_to "フォローする", follows_path(@user.id), method: :post %>
+  <% end %>
+<% end %>
+
 <% if current_user == @user %>
   <%= link_to t('views.common.edit'), edit_user_registration_path %> |
 <% end %>
