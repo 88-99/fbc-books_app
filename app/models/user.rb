@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :active_follows, foreign_key: 'follower_id', class_name: 'Follow', dependent: :destroy
   has_many :passive_follows, foreign_key: 'followed_id', class_name: 'Follow', dependent: :destroy
-  has_many :following, through: :active_follows, source: :followed
+  has_many :followings, through: :active_follows, source: :followed
   has_many :followers, through: :passive_follows, source: :follower
   has_one_attached :avatar
 
@@ -18,6 +18,6 @@ class User < ApplicationRecord
   end
 
   def following?(user)
-    following.include?(user)
+    followings.include?(user)
   end
 end

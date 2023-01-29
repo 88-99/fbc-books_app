@@ -9,12 +9,12 @@ class FollowsController < ApplicationController
     redirect_to request.referer, notice: 'ユーザーのフォローを解除しました' if following.destroy
   end
 
-  def search_following
+  def followings
     user = User.find(params[:user_id])
     @users = user.following # あるユーザがフォローしている集団
   end
 
-  def search_followers
+  def followers
     user = User.find(params[:user_id])
     @users = user.followers # あるユーザをフォローしている集団
   end
