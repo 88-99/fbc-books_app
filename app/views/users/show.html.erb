@@ -37,9 +37,9 @@
 
 <% unless current_user == @user %>
   <% if current_user.following?(@user) %>
-    <%= link_to "フォロー外す", follow_path(@user.id), method: :delete %>
+    <%= link_to t('views.common.follow'), follow_path(@user.id), method: :delete %>
   <% else %>
-    <%= link_to "フォローする", follows_path(@user.id), method: :post %>
+    <%= link_to t('views.common.unfollow'), follows_path(@user.id), method: :post %>
   <% end %>
 <% end %>
 

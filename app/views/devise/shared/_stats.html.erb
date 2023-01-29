@@ -4,12 +4,12 @@
     <strong>
       <%= @user.followings.count %>
     </strong>
-    following
+    <%= User.human_attribute_name(:following) %>
   </a>
   <a href="<%= followers_user_path(@user) %>">
     <strong>
       <%= @user.followers.count %>
     </strong>
-    followers
+    <%= User.human_attribute_name(:follower) %>
   </a>
 </div>
