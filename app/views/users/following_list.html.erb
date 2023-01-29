@@ -1,0 +1,28 @@
+<% if @users.exists? %>
+  <h2>following_list</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>avatar</th>
+        <th>name</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td>
+            <% if user.avatar.attached? %>
+              <%= image_tag user.avatar.variant(resize_to_fill: [30, 30]) %>
+            <% end %>
+          </td>
+          <td><%= user.email %></td>
+          <td>フォロー数: <%= user.followings.count %></td>
+          <td>フォロワー数: <%= user.followers.count %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>フォローしているユーザーはいません</p>
+<% end %>
