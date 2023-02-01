@@ -10,11 +10,11 @@ class UsersController < ApplicationController
   end
 
   def followings
-    @users = set_user.followings
+    @users = set_user.followings.with_attached_avatar
   end
 
   def followers
-    @users = set_user.followers
+    @users = set_user.followers.with_attached_avatar
   end
 
   private
