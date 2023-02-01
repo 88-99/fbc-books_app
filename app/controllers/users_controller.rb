@@ -11,12 +11,10 @@ class UsersController < ApplicationController
 
   def followings
     @users = set_user.followings
-    render 'following_list'
   end
 
   def followers
     @users = set_user.followers
-    render 'follower_list'
   end
 
   private
