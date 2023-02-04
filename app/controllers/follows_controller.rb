@@ -3,11 +3,11 @@
 class FollowsController < ApplicationController
   def create
     following = current_user.follow(params[:format])
-    redirect_to request.referer, notice: 'ユーザーをフォローしました' if following.save
+    redirect_back fallback_location: users_path, notice: t('controllers.success.notice_follow')
   end
 
   def destroy
     following = current_user.unfollow(params[:id])
-    redirect_to request.referer, notice: 'ユーザーのフォローを解除しました' if following.destroy
+    redirect_back fallback_location: users_path, notice: t('controllers.success.notice_unfollow')
   end
 end
