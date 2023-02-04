@@ -1,28 +1,6 @@
+<h2><%= t('views.common.title_followings') %></h2>
 <% if @users.exists? %>
-  <h2><%= t('views.common.title_following_list') %></h2>
-  <table>
-    <thead>
-      <tr>
-        <th><%= User.human_attribute_name(:avatar) %></th>
-        <th><%= User.human_attribute_name(:name) %></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @users.each do |user| %>
-        <tr>
-          <td>
-            <% if user.avatar.attached? %>
-              <%= image_tag user.avatar.variant(resize_to_fill: [30, 30]) %>
-            <% end %>
-          </td>
-          <td><%= user.email %></td>
-          <td><%= t('views.common.follow_count') %>: <%= user.followings.count %></td>
-          <td><%= t('views.common.follower_count') %>: <%= user.followers.count %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+  <%= render partial: 'follow' %>
 <% else %>
   <p><%= t('views.common.no_followings') %></p>
 <% end %>

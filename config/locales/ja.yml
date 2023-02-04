@@ -216,8 +216,8 @@ ja:
       title_new: "%{name}の新規作成"
       title_edit: "%{name}の編集"
       title_show: "%{name}の詳細"
-      title_following_list: フォローリスト
-      title_follower_list: フォロワーリスト
+      title_followings: フォローリスト
+      title_followers: フォロワーリスト
       sign_out: ログアウト
       minimum_length: "%{length}文字以上"
       follow: フォローする
