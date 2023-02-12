@@ -1,0 +1,6 @@
+<h2><%= t('views.common.title_followers') %></h2>
+<% if @users.exists? %>
+  <%= render partial: 'follow' %>
+<% else %>
+  <p><%= t('views.common.no_followers') %></p>
+<% end %>

@@ -216,8 +216,16 @@ ja:
       title_new: "%{name}の新規作成"
       title_edit: "%{name}の編集"
       title_show: "%{name}の詳細"
+      title_followings: フォローリスト
+      title_followers: フォロワーリスト
       sign_out: ログアウト
       minimum_length: "%{length}文字以上"
+      follow: フォローする
+      unfollow: フォロー解除
+      follow_count: フォロー数
+      follower_count: フォロワー数
+      no_followings: フォローしているユーザーはいません
+      no_followers: フォローされているユーザーはいません
     pagination:
       first: '最初'
       last: '最後'
@@ -229,6 +237,9 @@ ja:
       notice_create: "%{name}が作成されました。"
       notice_update: "%{name}が更新されました。"
       notice_destroy: "%{name}が削除されました。"
+    success:
+      notice_follow: フォローしました
+      notice_unfollow: フォロー解除しました
   layouts:
     application:
       menu: メニュー
