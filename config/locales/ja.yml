@@ -218,6 +218,8 @@ ja:
       title_show: "%{name}の詳細"
       sign_out: ログアウト
       minimum_length: "%{length}文字以上"
+      submit: コメントする
+      are_you_sure?: 本当によろしいですか？
     pagination:
       first: '最初'
       last: '最後'
