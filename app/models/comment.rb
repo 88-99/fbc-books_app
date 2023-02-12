@@ -2,6 +2,6 @@
 
 class Comment < ApplicationRecord
   belongs_to :user
-  belongs_to :book
-  belongs_to :report
+  belongs_to :book, optional: true
+  belongs_to :report, optional: true
 end

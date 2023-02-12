@@ -10,5 +10,7 @@ Rails.application.routes.draw do
       resources :followers, only: [:index]
     end
   end
-  resources :reports
+  resources :reports do
+    resources :comments, only: [:create]
+  end
 end
