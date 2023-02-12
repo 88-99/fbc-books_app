@@ -21,17 +21,17 @@ class ReportsController < ApplicationController
   def create
     @report = current_user.reports.new(report_params)
     @report.save!
-    redirect_to reports_path, notice: 'Report was successfully created.'
+    redirect_to reports_path, notice: t('controllers.common.notice_create', name: Report.model_name.human)
   end
 
   def update
     @report.update(report_params)
-    redirect_to report_path(params[:id]), notice: 'Report was successfully updated.'
+    redirect_to report_path(params[:id]), notice: t('controllers.common.notice_update', name: Report.model_name.human)
   end
 
   def destroy
     @report.destroy
-    redirect_to reports_path, notice: 'Report was successfully destroyed.'
+    redirect_to reports_path, notice: t('controllers.common.notice_destroy', name: Report.model_name.human)
   end
 
   private
