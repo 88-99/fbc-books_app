@@ -28,6 +28,7 @@
     <%= c.content %>
     <%= l c.created_at, format: :long %>
     <hr>
+    <%= link_to t('views.common.destroy'),  comment_path(c.id), method: :delete, data: { confirm: t('views.common.are_you_sure?') } %>
   </div>
 <% end %>
 

@@ -1,12 +1,17 @@
 # frozen_string_literal: true
 
 class CommentsController < ApplicationController
-  before_action :comment_params
-  before_action :set_commentable
+  before_action :set_commentable, only: %i[create]
+  before_action :set_comment, only: %i[destroy]
 
   def create
     @comment = @commentable.comments.new(comment_params)
     @comment.save!
+    redirect_back(fallback_location: root_path)
+  end
+
+  def destroy
+    @comment.destroy
     redirect_back(fallback_location: root_path)
   end
 
@@ -21,6 +26,10 @@ class CommentsController < ApplicationController
       when 'books'
         Book.find_by! id: id
       end
+  end
+
+  def set_comment
+    @comment = Comment.find(params[:id])
   end
 
   def comment_params
