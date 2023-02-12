@@ -22,3 +22,18 @@
 
 <%= link_to t('views.common.edit'), edit_book_path(@book) %> |
 <%= link_to t('views.common.back'), books_path %>
+
+<h2><%= t('activerecord.models.comment') %></h2>
+<% @comments.each do |c| %>
+  <div>
+    <a href="/users/<%= c.user_id %>"><%= c.user.email %></a>
+    <%= c.content %>
+    <hr>
+  </div>
+<% end %>
+
+<%= form_for [@book, @comment] do |f| %>
+  <%= f.text_field :content %>
+  <br>
+  <%= f.submit t('views.common.submit') %>
+<% end %>
