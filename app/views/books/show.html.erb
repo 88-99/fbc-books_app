@@ -28,6 +28,7 @@
   <div>
     <a href="/users/<%= c.user_id %>"><%= c.user.email %></a>
     <%= c.content %>
+    <%= l c.created_at, format: :long %>
     <hr>
   </div>
 <% end %>
