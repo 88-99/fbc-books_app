@@ -21,16 +21,9 @@
 <% end %>
 <%= link_to t('views.common.back'), reports_path %>
 
-<h2><%= t('activerecord.models.comment') %></h2>
-<% @comments.each do |c| %>
-  <div>
-    <a href="/users/<%= @report.user.id %>"><%= c.user.email %></a>
-    <%= c.content %>
-    <%= l c.created_at, format: :long %>
-    <hr>
-    <%= link_to t('views.common.destroy'),  comment_path(c.id), method: :delete, data: { confirm: t('views.common.are_you_sure?') } if current_user.id == c.user_id %>
-  </div>
-<% end %>
+<p>
+  <%= render partial: 'comments/comments' %>
+</p>
 
 <%= form_for [@report, @comment] do |f| %>
   <%= f.text_field :content %>
