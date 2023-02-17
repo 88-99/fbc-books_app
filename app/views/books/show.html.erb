@@ -27,7 +27,7 @@
   <%= render partial: 'comments/comments' %>
 </p>
 
-<%= form_for [@book, @comment] do |f| %>
+<%= form_with model: [@book, @comment] do |f| %>
   <%= f.text_field :content %>
   <br>
   <%= f.submit t('views.common.submit') %>
