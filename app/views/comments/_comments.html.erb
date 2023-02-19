@@ -1,12 +1,19 @@
 <% @comments.each do |c| %>
   <div>
-    <a href="/users/<%= c.user_id %>"><%= c.user.email %></a>
-    <%= c.content %>
+    <% if c.user.name.blank? %>
+      <a href="/users/<%= c.user_id %>"><%= c.user.email %></a>
+    <% else %>
+      <a href="/users/<%= c.user_id %>"><%= c.user.name %></a>
+    <% end %>
     <%= l c.created_at, format: :long %>
   </div>
-  
+
+  <div>
+    <%= c.content %>
+  </div>
+
   <div>
     <%= link_to t('views.common.destroy'),  comment_path(c.id), method: :delete, data: { confirm: t('views.common.are_you_sure?') } if current_user.id == c.user_id %>
-    <hr>
   </div>
+  <hr>
 <% end %>

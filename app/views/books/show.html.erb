@@ -23,9 +23,7 @@
 <%= link_to t('views.common.edit'), edit_book_path(@book) %> |
 <%= link_to t('views.common.back'), books_path %>
 
-<p>
-  <%= render partial: 'comments/comments' %>
-</p>
+<%= render partial: 'comments/comments' %>
 
 <%= form_with model: [@book, @comment] do |f| %>
   <%= f.text_field :content %>
