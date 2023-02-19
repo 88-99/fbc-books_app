@@ -25,4 +25,10 @@ class ApplicationController < ActionController::Base
   def signed_in_root_path(_resource_or_scope)
     user_path(current_user)
   end
+
+  def correct_user(change_target)
+    if change_target.user != current_user
+      redirect_to root_path, notice: t('controllers.common.notice_unauthorized')
+    end
+  end
 end

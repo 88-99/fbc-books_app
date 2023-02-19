@@ -11,6 +11,7 @@ class CommentsController < ApplicationController
   end
 
   def destroy
+    correct_user(@comment) and return
     @comment.destroy
     redirect_back(fallback_location: root_path)
   end

@@ -16,7 +16,9 @@ class ReportsController < ApplicationController
     @report = Report.new
   end
 
-  def edit; end
+  def edit
+    correct_user(@report) and return
+  end
 
   def create
     @report = current_user.reports.new(report_params)
@@ -25,11 +27,13 @@ class ReportsController < ApplicationController
   end
 
   def update
+    correct_user(@report) and return
     @report.update(report_params)
     redirect_to report_path(params[:id]), notice: t('controllers.common.notice_update', name: Report.model_name.human)
   end
 
   def destroy
+    correct_user(@report) and return
     @report.destroy
     redirect_to reports_path, notice: t('controllers.common.notice_destroy', name: Report.model_name.human)
   end
