@@ -19,13 +19,12 @@ class CommentsController < ApplicationController
   private
 
   def set_commentable
-    type, id = request.path.split('/')[1, 2]
     @commentable =
-      case type
-      when 'reports'
-        Report.find_by! id: id
-      when 'books'
-        Book.find_by! id: id
+      case 
+      when params.keys.include?("report_id")
+        Report.find_by!(id: params[:report_id])
+      when params.keys.include?("book_id")
+        Book.find_by!(id: params[:book_id])
       end
   end
 
