@@ -21,8 +21,11 @@ class ReportsController < ApplicationController
 
   def create
     @report = current_user.reports.new(report_params)
-    @report.save!
-    redirect_to reports_path, notice: t('controllers.common.notice_create', name: Report.model_name.human)
+    if @report.save
+      redirect_to @report, notice: t('controllers.common.notice_create', name: Report.model_name.human)
+    else
+      render :new
+    end
   end
 
   def update
