@@ -2,6 +2,7 @@
 
 class ReportsController < ApplicationController
   before_action :set_report, only: %i[show edit update destroy]
+  before_action :correct_user, only: %i[edit update destroy]
 
   def index
     @reports = Report.order(:id).page(params[:page]).per(5)
@@ -16,9 +17,7 @@ class ReportsController < ApplicationController
     @report = Report.new
   end
 
-  def edit
-    correct_user(@report) and return
-  end
+  def edit; end
 
   def create
     @report = current_user.reports.new(report_params)
@@ -27,13 +26,11 @@ class ReportsController < ApplicationController
   end
 
   def update
-    correct_user(@report) and return
     @report.update(report_params)
     redirect_to report_path(params[:id]), notice: t('controllers.common.notice_update', name: Report.model_name.human)
   end
 
   def destroy
-    correct_user(@report) and return
     @report.destroy
     redirect_to reports_path, notice: t('controllers.common.notice_destroy', name: Report.model_name.human)
   end
@@ -46,5 +43,11 @@ class ReportsController < ApplicationController
 
   def report_params
     params.require(:report).permit(:title, :content)
+  end
+
+  def correct_user
+    if @report.user != current_user
+      redirect_to root_path, notice: t('controllers.common.notice_unauthorized')
+    end
   end
 end

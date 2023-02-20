@@ -3,6 +3,7 @@
 class CommentsController < ApplicationController
   before_action :set_commentable, only: %i[create]
   before_action :set_comment, only: %i[destroy]
+  before_action :correct_user, only: %i[destroy]
 
   def create
     @comment = @commentable.comments.new(comment_params)
@@ -11,7 +12,6 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    correct_user(@comment) and return
     @comment.destroy
     redirect_back(fallback_location: root_path)
   end
@@ -34,5 +34,11 @@ class CommentsController < ApplicationController
 
   def comment_params
     params.require(:comment).permit(:content).merge(user_id: current_user.id)
+  end
+
+  def correct_user
+    if @comment.user != current_user
+      redirect_to root_path, notice: t('controllers.common.notice_unauthorized')
+    end
   end
 end
