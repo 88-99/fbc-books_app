@@ -5,7 +5,7 @@ class ReportsController < ApplicationController
   before_action :correct_user, only: %i[edit update destroy]
 
   def index
-    @reports = Report.order(:id).page(params[:page]).per(5)
+    @reports = Report.includes(:user).order(:id).page(params[:page]).per(5)
   end
 
   def show
