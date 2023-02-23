@@ -15,6 +15,10 @@ class User < ApplicationRecord
 
   has_one_attached :avatar
 
+  def name_or_email
+    name.presence || email
+  end
+
   def following?(user)
     active_relationships.where(following_id: user.id).exists?
   end

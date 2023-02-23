@@ -1,19 +1,15 @@
-<% @comments.each do |c| %>
+<% @comments.each do |comment| %>
   <div>
-    <% if c.user.name.blank? %>
-      <a href="/users/<%= c.user_id %>"><%= c.user.email %></a>
-    <% else %>
-      <a href="/users/<%= c.user_id %>"><%= c.user.name %></a>
-    <% end %>
-    <%= l c.created_at, format: :long %>
+    <%= link_to comment.user.name_or_email, user_path(comment.user_id) %>
+    <%= l comment.created_at, format: :long %>
   </div>
 
   <div>
-    <%= c.content %>
+    <%= comment.content %>
   </div>
 
   <div>
-    <%= link_to t('views.common.destroy'),  comment_path(c.id), method: :delete, data: { confirm: t('views.common.are_you_sure?') } if current_user.id == c.user_id %>
+    <%= link_to t('views.common.destroy'),  comment_path(comment.id), method: :delete, data: { confirm: t('views.common.are_you_sure?') } if current_user.id == comment.user_id %>
   </div>
   <hr>
 <% end %>
