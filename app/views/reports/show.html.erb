@@ -1,0 +1,29 @@
+<h1><%= t('views.common.title_show', name: Report.model_name.human) %></h1>
+
+<p>
+  <strong><%= t('views.common.created_at') %> :</strong>
+  <%= l @report.created_at, format: :long %>
+</p>
+
+<p>
+  <strong><%= Report.human_attribute_name('title') %> :</strong>
+  <%= @report.title %>
+</p>
+
+<p>
+  <strong><%= Report.human_attribute_name('content') %> :</strong>
+  <%= @report.content %>
+</p>
+
+<% if current_user.id == @report.user_id %>
+  <%= link_to t('views.common.edit'), edit_report_path(@report) %> |
+  <%= link_to t('views.common.destroy'), @report, method: :delete, data: { confirm: t('views.common.are_you_sure?') } %> |
+<% end %>
+<%= link_to t('views.common.back'), reports_path %>
+
+<%= render partial: 'comments/comments' %>
+
+<%= form_with model: [@report, @comment] do |f| %>
+  <%= f.text_field :content %>
+  <%= f.submit t('views.common.submit') %>
+<% end %>

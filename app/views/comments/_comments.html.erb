@@ -1,0 +1,15 @@
+<% @comments.each do |comment| %>
+  <div>
+    <%= link_to comment.user.name_or_email, user_path(comment.user_id) %>
+    <%= l comment.created_at, format: :long %>
+  </div>
+
+  <div>
+    <%= comment.content %>
+  </div>
+
+  <div>
+    <%= link_to t('views.common.destroy'),  comment_path(comment.id), method: :delete, data: { confirm: t('views.common.are_you_sure?') } if current_user.id == comment.user_id %>
+  </div>
+  <hr>
+<% end %>
