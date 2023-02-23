@@ -20,10 +20,9 @@ class CommentsController < ApplicationController
 
   def set_commentable
     @commentable =
-      case 
-      when params.keys.include?("report_id")
+      if params.key?('report_id')
         Report.find_by!(id: params[:report_id])
-      when params.keys.include?("book_id")
+      elsif params.key?('book_id')
         Book.find_by!(id: params[:book_id])
       end
   end
@@ -37,8 +36,6 @@ class CommentsController < ApplicationController
   end
 
   def correct_user
-    if @comment.user != current_user
-      redirect_to root_path, notice: t('controllers.common.notice_unauthorized')
-    end
+    redirect_to root_path, notice: t('controllers.common.notice_unauthorized') if @comment.user != current_user
   end
 end

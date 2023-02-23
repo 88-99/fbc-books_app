@@ -49,8 +49,6 @@ class ReportsController < ApplicationController
   end
 
   def correct_user
-    if @report.user != current_user
-      redirect_to root_path, notice: t('controllers.common.notice_unauthorized')
-    end
+    redirect_to root_path, notice: t('controllers.common.notice_unauthorized') if @report.user != current_user
   end
 end
