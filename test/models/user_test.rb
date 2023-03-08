@@ -11,12 +11,21 @@ class UserTest < ActiveSupport::TestCase
     assert_equal 'Foo Bar', user.name_or_email
   end
 
-  test '#follow' do
+  test 'フォローする' do
     me = User.create!(email: 'me@example.com', password: 'password')
     she = User.create!(email: 'she@example.com', password: 'password')
 
     assert_not me.following?(she)
     me.follow(she)
     assert me.following?(she)
+  end
+
+  test 'フォローを解除する' do
+    me = User.create!(email: 'me@example.com', password: 'password')
+    she = User.create!(email: 'she@example.com', password: 'password')
+
+    me.follow(she)
+    me.unfollow(she)
+    assert_not me.following?(she)
   end
 end
