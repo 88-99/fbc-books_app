@@ -6,6 +6,8 @@ class UserTest < ActiveSupport::TestCase
   setup do
     @alice = users(:Alice)
     @bob = users(:Bob)
+    Relationship.destroy_all
+    @alice.follow(@bob)
   end
 
   test '#name_or_email' do
@@ -17,19 +19,19 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test 'フォローする' do
-    assert_equal @bob.active_relationships.find_or_create_by!(following_id: @alice.id), @bob.follow(@alice)
+    assert Relationship.first.follower.id == @alice.id && Relationship.first.following.id == @bob.id
   end
 
   test 'フォローを解除する' do
-    relationship = @bob.active_relationships.find_by(following_id: @alice)
-    assert_equal relationship&.destroy!, @bob.unfollow(@alice)
+    @alice.unfollow(@bob)
+    assert Relationship.all.blank?
   end
 
   test 'ユーザをフォローしているかどうか' do
-    assert_equal @bob.active_relationships.where(following_id: @alice.id).exists?, @bob.following?(@alice)
+    assert @alice.following?(@bob)
   end
 
   test 'ユーザにフォローされているかどうか' do
-    assert_equal @bob.passive_relationships.where(follower_id: @alice.id).exists?, @bob.followed_by?(@alice)
+    assert @bob.followed_by?(@alice)
   end
 end
