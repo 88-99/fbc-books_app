@@ -6,8 +6,6 @@ class UserTest < ActiveSupport::TestCase
   setup do
     @alice = users(:Alice)
     @bob = users(:Bob)
-    Relationship.destroy_all
-    @alice.follow(@bob)
   end
 
   test '#name_or_email' do
@@ -19,6 +17,8 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test 'フォローする' do
+    Relationship.destroy_all
+    @alice.follow(@bob)
     assert Relationship.first.follower.id == @alice.id && Relationship.first.following.id == @bob.id
   end
 
