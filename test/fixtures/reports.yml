@@ -1,11 +1,11 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 report1:
-  user: Alice
+  user_id: 1
   title: レポート1のタイトル
   content: レポート1の内容
 
 report2:
-  user: Alice
+  user_id: 1
   title: レポート2のタイトル
   content: レポート2の内容
