@@ -27,11 +27,19 @@ class UserTest < ActiveSupport::TestCase
     assert Relationship.all.blank?
   end
 
-  test 'ユーザをフォローしているかどうか' do
+  test 'ユーザをフォローしている' do
     assert @alice.following?(@bob)
   end
 
-  test 'ユーザにフォローされているかどうか' do
+  test 'ユーザをフォローしていない' do
+    assert_not @bob.following?(@alice)
+  end
+
+  test 'ユーザにフォローされている' do
     assert @bob.followed_by?(@alice)
+  end
+
+  test 'ユーザにフォローされていない' do
+    assert_not @alice.followed_by?(@bob)
   end
 end
