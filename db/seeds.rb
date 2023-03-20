@@ -24,7 +24,7 @@ def add_comments_to(commentable)
     time = times[n]
     user = users.sample
     content = DummyTextJp.sentences(1)
-    commentable.comments.create!(user: user, content: content, created_at: time, updated_at: time)
+    commentable.comments.create!(user:, content:, created_at: time, updated_at: time)
   end
 end
 
@@ -72,7 +72,7 @@ User.transaction do
     User.create!(
       email: "sample-#{n}@example.com",
       password: 'password',
-      name: name,
+      name:,
       postal_code: "123-#{n.to_s.rjust(4, '0')}",
       address: Faker::Address.full_address,
       self_introduction: "こんにちは、#{name}です。"
@@ -110,7 +110,7 @@ times = Array.new(55) { Faker::Time.between(from: 5.days.ago, to: 1.day.ago) }.s
   title = DummyTextJp.sentences(2)[0..title_length]
   content_length = [*1..3].sample
   content = DummyTextJp.sentences(content_length).gsub(/。/, "。\n")
-  user.reports.create!(title: title, content: content, created_at: time, updated_at: time)
+  user.reports.create!(title:, content:, created_at: time, updated_at: time)
 end
 
 # dependent: :destroy で全件削除されているはずだが念のため
